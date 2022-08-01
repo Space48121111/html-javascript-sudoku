@@ -1,7 +1,10 @@
 from random import randint
 
 # ? int vals of the grid
-sudoku[x][y] = []
+sudoku[][] = [] # 9x9
+for i in range(0, 9):
+    for j in range(0, 9):
+        sudoku[i][j]
 
 def getRandomInt(max):
     return randint(0, max)
@@ -11,12 +14,11 @@ def clearSudoku():
         for y in range(0, 9):
             sudoku[x][y] = 0
 
-# ? functionalities of slot() cell()
-def getCell(slot):
-    for (x, y) in slot(x, y):
+# ? new data type slot() cell()
+def getCell(slot(x, y)):
         x = x/3
         y = y/3
-    return cell(x, y)
+    return cell(x, y) 
 
 def getSlots(cell):
     slots = []
