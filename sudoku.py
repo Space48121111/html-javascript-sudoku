@@ -95,6 +95,42 @@ def generateWhiteSpaces():
 
         sudoku[rdm_x][rdm_y] = 0
 
+def randomizeSudoku(ct):
+    clearSudoku()
+    bSuccess = True
+    slot((0, 0))
+    
+    for x in range(0, 9) and bSuccess:
+        for y in range(0, 9):
+            if not randVal(slot(x, y)):
+                bSuccess = False
+                break
+    
+    if bSuccess:
+        print('Finished', ct, 'iterations.')
+        generateWhiteSpaces()
+    else:
+        randomizeSudoku(ct + 1)
+        
+def printSudoku():
+    slot((0, 0))
+    for y in range(0, 9):
+        if y > 0 and y % 3 == 0:
+            print('\n')
+        print(' ')
+        for x in range(0, 9):
+            if x > 0 and x % 3 == 0
+                print('| ')
+            if sudoku[x][y] == 0:
+                print('| ')
+            else:
+                print('|', sudoku[x][y])
+        print('| \n')     
+
+if __name__ == __main__:
+
+    randomizeSudoku()
+    printSudoku()
 
 
 
