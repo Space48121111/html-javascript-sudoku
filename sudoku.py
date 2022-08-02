@@ -18,39 +18,34 @@ def clearSudoku():
             sudoku = []
 
 # new data type slot() cell()
-def slot(x, y):
-    slot = [(x, y)]
-    return slot
+int x_s, y_s = 0, 0
+int x_c, y_c = 0, 0
 
-def cell(x, y):
-    cell = [(x, y)]
-    return cell
+def getCell(x_s, y_s):
+    x_c = x_s/3
+    y_c = y_s/3
 
-def getCell(slot):
-    x = x/3
-    y = y/3
+    return (x_c, y_c)
 
-    return cell(x, y)
-
-def getSlots(cell):
+def getSlots(x_c, y_c):
     slots = []
     for x in range(3):
         for y in range(3):
-            coords_x = cell[x*3] + x
-            coords_y = cell[y*3] + y
-            slots.append(slot[(coords_x, coords_y)])
+            x_s = x*3 + x
+            y_s = y*3 + y
+            slots.append((x_s, y_s))
     return slots
 
 def getVals(slots):
     values = []
-    for i in range(0, len(slots)):
-        x, y = slot[x], slot[y]
+    for i in range(len(slots)):
+        x, y = x_s, y_s
         values.append(sudoku[x][y])
     return values
 
 def NotAppearedVal(cell):
-    slots = getSlots(cell);
-    values = getVals(slots);
+    slots = getSlots(cell)
+    values = getVals(slots)
     res = []
 
     for val in range(1, 9):
