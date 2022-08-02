@@ -18,7 +18,14 @@ def clearSudoku():
             sudoku = []
 
 # new data type slot() cell()
-slot = [x, y]
+def slot(x, y):
+    slot = [(x, y)]
+    return slot
+
+def cell(x, y):
+    cell = [(x, y)]
+    return cell
+
 def getCell(slot):
     x = x/3
     y = y/3
